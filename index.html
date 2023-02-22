@@ -13,6 +13,13 @@
     gtag('js', new Date());
 
     gtag('config', 'G-MSC9T5K29Q');
+    const clientIdPromise = new Promise(resolve => {
+      gtag('get', 'G-MSC9T5K29Q', 'client_id', resolve)
+    });
+
+    clientIdPromise.then((clientId) => {
+      console.log(clientId)
+    })
   </script>
 </head>
 <body>
@@ -21,11 +28,3 @@
 
 </body>
 </html>
-
-const clientIdPromise = new Promise(resolve => {
-  gtag('get', 'G-MSC9T5K29Q', 'client_id', resolve)
-});
-
-clientIdPromise.then((clientId) => {
-  console.log(clientId)
-})
